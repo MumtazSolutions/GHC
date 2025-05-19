@@ -1,0 +1,153 @@
+{
+    "data": {
+        "year": 2023,
+        "totalYearlySleep": 36466,
+        "avgYearlySleep": 3038.83,
+        "monthly": {
+            "weeksInMonth": 5,
+            "monthNumber": 6,
+            "monthName": "June",
+            "totalMonthlySleep": 120,
+            "avgMonthlySleep": 24,
+            "weekly": [
+                {
+                    "weekNumber": 1,
+                    "totalWeeklySleep": 0,
+                    "avgWeeklySleep": 0,
+                    "daily": []
+                },
+                {
+                    "weekNumber": 2,
+                    "totalWeeklySleep": 0,
+                    "avgWeeklySleep": 0,
+                    "daily": []
+                },
+                {
+                    "weekNumber": 3,
+                    "totalWeeklySleep": 0,
+                    "avgWeeklySleep": 0,
+                    "daily": []
+                },
+                {
+                    "weekNumber": 4,
+                    "totalWeeklySleep": 120,
+                    "avgWeeklySleep": 17.14,
+                    "daily": [
+                        {
+                            "dayName": "Sunday",
+                            "dayOfMonth": 18,
+                            "totalSleep": 60
+                        },
+                        {
+                            "dayName": "Monday",
+                            "dayOfMonth": 19,
+                            "totalSleep": 70
+                        },
+                        {
+                            "dayName": "Tuesday",
+                            "dayOfMonth": 0,
+                            "totalSleep": 0
+                        },
+                        {
+                            "dayName": "Wednesday",
+                            "dayOfMonth": 0,
+                            "totalSleep": 0
+                        },
+                        {
+                            "dayName": "Thursday",
+                            "dayOfMonth": 0,
+                            "totalSleep": 0
+                        },
+                        {
+                            "dayName": "Friday",
+                            "dayOfMonth": 0,
+                            "totalSleep": 0
+                        },
+                        {
+                            "dayName": "Saturday",
+                            "dayOfMonth": 0,
+                            "totalSleep": 0
+                        }
+                    ],
+                    "currentWeek": true
+                },
+                {
+                    "weekNumber": 5,
+                    "totalWeeklySleep": 0,
+                    "avgWeeklySleep": 0,
+                    "daily": []
+                }
+            ]
+        },
+        "totalSleepToday": 60,
+        "weight": 65,
+        "bedTime": false,
+        "sleepGoal": 360,
+        "sleeplessness": 240,
+        "oversleep": 480,
+        "monthsData": [
+            {
+                "monthName": "January",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "February",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "March",
+                "totalMonthlySleep": 35676,
+                "monthlyAvgSleep": 7135.2
+            },
+            {
+                "monthName": "April",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "May",
+                "totalMonthlySleep": 670,
+                "monthlyAvgSleep": 134
+            },
+            {
+                "monthName": "June",
+                "totalMonthlySleep": 120,
+                "monthlyAvgSleep": 24
+            },
+            {
+                "monthName": "July",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "August",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "September",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "October",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "November",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            },
+            {
+                "monthName": "December",
+                "totalMonthlySleep": 0,
+                "monthlyAvgSleep": 0
+            }
+        ],
+        "daysInMonth": 30,
+        "weeksInMonth": 5
+    }
+}

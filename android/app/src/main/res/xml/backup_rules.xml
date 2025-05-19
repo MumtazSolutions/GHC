@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <exclude domain="sharedpref" path="FlutterSecureStorage"/>
+</full-backup-content>
+<!-- <network-security-config>
+  <base-config>
+      <trust-anchors>
+          <certificates src="system" />
+          <certificates src="user" overridePins="true" />
+      </trust-anchors>
+  </base-config>
+</network-security-config> -->

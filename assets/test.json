@@ -1,0 +1,89 @@
+{
+    "type": "Hair",
+    "startDate": "2021-10-26T06:10:29.631Z",
+    "progressWeek": "6",
+    "totalWeeks": "52",
+    "progressPercent":"22",
+    "progress": {
+        "months": [
+            {
+                "monthName": "October",
+                "monthNumber":"10",
+                "weeksInMonth": "4",
+                "weeks": [
+                    {
+                        "weekNumber": "week 1",
+                        "weekImages": {
+                            "uploadDate": "2021-10-02T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 2",
+                        "weekImages": {
+                            "uploadDate": "2021-10-10T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 3",
+                        "weekImages": {
+                            "uploadDate": "2021-10-18T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 4",
+                        "weekImages": {
+                            "uploadDate": "2021-10-23T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    }
+                ]
+            },
+            {
+                "monthName": "November",
+                "monthNumber":"11",
+                "weeksInMonth": "4",
+                "weeks": [
+                    {
+                        "weekNumber": "week 5",
+                        "weekImages": {
+                            "uploadDate": "2021-11-05T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 6",
+                        "weekImages": {
+                            "uploadDate": "2021-11-16T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 7",
+                        "weekImages": {
+                            "uploadDate": "2021-11-22T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    },
+                    {
+                        "weekNumber": "week 8",
+                        "weekImages": {
+                            "uploadDate": "2021-11-30T06:10:29.631Z",
+                            "topImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg",
+                            "frontImage": "https://s3.amazonaws.com/cdn.ricaria.com/8a905aea-e9ee-4a04-b7f8-fa68cc5955f3.jpg"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

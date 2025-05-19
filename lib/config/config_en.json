@@ -1,0 +1,157 @@
+{
+  "HorizonLayout": [
+    {
+      "layout": "logo",
+      "showMenu": true,
+      "showSearch": true,
+      "showLogo": true
+    },
+    {
+      "layout": "bannerImage",
+      "isSlider": true,
+      "autoPlay": true,
+      "intervalTime": 5,
+      "showNumber": false,
+      "design": "default",
+      "showBackGround": true,
+      "radius": 2.0,
+      "items": [
+        {
+          "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzIzMDc5MjQ5NTI2OA==",
+          "image": "assets/images/banner1.png",
+          "padding": 15.0
+        },
+        {
+          "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzIxODQyMzg4NTk4OA==",
+          "image": "assets/images/banner2.jpg",
+          "padding": 15.0
+        },
+        {
+          "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzIxODQyNTU4OTkyNA==",
+          "image": "assets/images/banner3.jpg",
+          "padding": 15.0
+        }
+      ]
+    },
+    {
+      "alignment":"topCenter",
+      "marginTop":0,
+      "marginBottom":0,
+      "items":[
+      {
+      "image":"assets/images/moonsHomePage.png",
+      "width":250,
+      "height":200.0,
+      "borderRadius":2,
+      "marginLeft":0,
+      "marginRight":0,
+      "textFontSize":14,
+      "useMaxWidth":true,
+      "navigator":{
+      "showSubcategory":false,
+      "url_launch":"https://ghc.health/pages/referral"}
+      }
+      ],
+      "layout":"button",
+      "pos":500
+      },
+    {
+      "name": "Recently Viewed",
+      "layout": "recentView"
+    },
+    {
+      "name": "Hair products",
+      "image": "",
+      "layout": "twoColumn",
+      "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI4MDMwODA1NjIyOA==",
+      "isSnapping": true
+    },
+
+    {
+      "name": "Beard Products",
+      "image": "",
+      "layout": "twoColumn",
+      "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI4MDMwOTI2ODY0NA==",
+      "isSnapping": true
+    },
+
+    {
+      "name": "Wellness Products",
+      "image": "",
+      "layout": "twoColumn",
+      "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2NzM2MjA3NDc4OA==",
+      "isSnapping": true
+    },
+    {
+      "name": "Skin Products",
+      "image": "",
+      "layout": "twoColumn",
+      "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NDU3OTUyMTcwMA==",
+      "isSnapping": true
+    },
+    {
+      "name": "Performance Boosters",
+      "image": "",
+      "layout": "twoColumn",
+      "category": "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI4MDMwOTUzMDc4OA==",
+      "isSnapping": true
+    },
+    {
+      "name": "Our Blog Posts",
+      "layout": "blog"
+    }
+  ],
+  "Setting": {
+    "MainColor": "#F3AAA3",
+    "ProductListLayout": "list",
+    "StickyHeader": false
+  },
+  "TabBar": [
+    {
+      "layout": "home",
+      "icon": "assets/icons/tabs/icon-home.png"
+    },
+    {
+      "layout": "cart",
+      "icon": "assets/icons/tabs/icon-cart2.png"
+    },
+    {
+      "layout": "community",
+      "icon": "assets/icons/tabs/community.png"
+    },
+    {
+      "layout": "progress",
+      "icon": "assets/icons/tabs/progress_icon_01.png"
+    },
+    {
+      "layout": "profile",
+      "icon": "assets/icons/tabs/icon-user.png"
+    }
+  ],
+  "searchSuggestion": [
+    "hair",
+    "beard",
+    "performance",
+    "skin"
+  ],
+  "OnBoarding": {
+    "OnBoardOnlyShowFirstTime": false,
+    "data": [
+      {
+        "title": "Shop",
+        "image": "assets/images/shop.png",
+        "desc": "Men’s health and wellness products on hair, beard, performance and weight management"
+      },
+      {
+        "title": "Track",
+        "image": "assets/images/track.png",
+        "desc": "Track your Wellness progress while you are on your treatment"
+      },
+      {
+        "title": "Compare",
+        "image": "assets/images/compare.png",
+        "desc": "Compare and Monitor your improvement on the go!"
+      }
+    ]
+  }
+}

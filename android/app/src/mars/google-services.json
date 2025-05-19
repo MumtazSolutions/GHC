@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168835394875",
+    "project_id": "marsbyghc-ab207",
+    "storage_bucket": "marsbyghc-ab207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168835394875:android:54022ec117afad9bf01b1e",
+        "android_client_info": {
+          "package_name": "com.ghc.marsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168835394875-vm1sq5ekj6hausr4qrage8cm3bh1hs95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZUJWODN7d7vdmiSn3RFomCqiG7Qt0N7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168835394875-vm1sq5ekj6hausr4qrage8cm3bh1hs95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

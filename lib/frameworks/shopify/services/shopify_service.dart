@@ -468,65 +468,46 @@ class ShopifyService extends BaseServices {
   }
 
   @override
-  Future<List<ShippingMethod>> getShippingMethods({
-    CartModel? cartModel,
-    String? token,
-    String? checkoutId,
-    store_model.Store? store,
-    String? langCode,
-  }) async {
+  Future<List<ShippingMethod>> getShippingMethods(
+      {CartModel? cartModel,
+      String? token,
+      String? checkoutId,
+      store_model.Store? store,
+      String? langCode}) async {
     try {
-      final list = <ShippingMethod>[];
-      final address = cartModel!.address!;
-      final buyerIdentity = {
-        'email': cartModel.address?.email,
-        'phone': cartModel.address?.phoneNumber,
-        'deliveryAddressPreferences': [
-          {
-            'deliveryAddress': {
-              'address1': cartModel.address?.apartment,
-              'address2': cartModel.address?.block,
-              'city': cartModel.address?.city,
-              'province': cartModel.address?.state,
-              'country': cartModel.address?.country,
-              'zip': cartModel.address?.zipCode,
-              'firstName': cartModel.address?.firstName,
-              'lastName': cartModel.address?.lastName,
-              'phone': cartModel.address?.phoneNumber,
-            }
-          }
-        ]
-      };
+      var list = <ShippingMethod>[];
+      var newAddress = cartModel!.address!.toShopifyJson()['address'];
 
       printLog('getShippingMethods with checkoutId $checkoutId');
 
       final options = MutationOptions(
         document: gql(ShopifyQuery.updateShippingAddress),
-        variables: {
-          'cartId': checkoutId,
-          'buyerIdentity': buyerIdentity,
-        },
+        variables: {'shippingAddress': newAddress, 'cartId': checkoutId},
       );
 
       final result = await client.mutate(options);
 
-      await Future.delayed(const Duration(seconds: 15));
-
       if (result.hasException) {
         printLog(result.exception.toString());
-        throw ('So sorry, we do not support shipping to your address.');
+        throw ('So sorry, We do not support shipping to your address.');
       }
 
-      final cart = result.data?['cartDeliveryAddressesAdd']?['cart'];
-      final addresses = cart?['delivery']?['addresses'] ?? [];
+      var checkout =
+          result.data!['checkoutShippingAddressUpdateV2']['checkout'];
+      var availableShippingRates = checkout['availableShippingRates'];
 
-      for (var item in addresses) {
-        final shippingMethod = ShippingMethod.fromShopifyJson(item);
-        list.add(shippingMethod);
+      if (availableShippingRates['ready']) {
+        for (var item in availableShippingRates['shippingRates']) {
+          list.add(ShippingMethod.fromShopifyJson(item));
+        }
       }
+
+      // update checkout
+      CheckoutCart.fromJsonShopify(checkout);
 
       printLog(
           '::::getShippingMethods ${list.map((e) => e.toString()).join(', ')}');
+
       return list;
     } catch (e) {
       printLog('::::getShippingMethods shopify error');
@@ -1013,14 +994,17 @@ class ShopifyService extends BaseServices {
     String discountCode,
   ) async {
     try {
+      var lineItems = [];
+
       printLog('applyCoupon ${cartModel.productsInCart}');
-      printLog('Applying discount code: $discountCode');
+
+      printLog('applyCoupon $lineItems');
 
       final options = MutationOptions(
         document: gql(ShopifyQuery.applyCoupon),
         variables: {
-          'cartId': cartModel.checkout!.id,
-          'discountCodes': [discountCode],
+          'discountCode': discountCode,
+          'checkoutId': cartModel.checkout!.id
         },
       );
 
@@ -1031,12 +1015,9 @@ class ShopifyService extends BaseServices {
         throw Exception(result.exception.toString());
       }
 
-      final cart = result.data?['cartDiscountCodesUpdate']?['cart'];
-      if (cart == null) {
-        throw Exception('Cart is null after applying discount code.');
-      }
+      var checkout = result.data!['checkoutDiscountCodeApplyV2']['checkout'];
 
-      return CheckoutCart.fromJsonShopifyCart(cart);
+      return CheckoutCart.fromJsonShopifyV2(checkout);
     } catch (e) {
       printLog('::::applyCoupon shopify error');
       printLog(e.toString());
@@ -1044,15 +1025,12 @@ class ShopifyService extends BaseServices {
     }
   }
 
-  Future<CheckoutCart> removeCoupon(String? cartId) async {
+  Future<CheckoutCart> removeCoupon(String? checkoutId) async {
     try {
-      if (cartId == null) throw Exception('Cart ID cannot be null.');
-
       final options = MutationOptions(
-        document: gql(ShopifyQuery.applyCoupon), // reuse the same mutation
+        document: gql(ShopifyQuery.removeCoupon),
         variables: {
-          'cartId': cartId,
-          'discountCodes': [], // 👈 empty list to remove coupons
+          'checkoutId': checkoutId,
         },
       );
 
@@ -1063,13 +1041,9 @@ class ShopifyService extends BaseServices {
         throw Exception(result.exception.toString());
       }
 
-      final cart = result.data?['cartDiscountCodesUpdate']?['cart'];
+      var checkout = result.data!['checkoutDiscountCodeRemove']['checkout'];
 
-      if (cart == null) {
-        throw Exception('Cart is null after removing coupon.');
-      }
-
-      return CheckoutCart.fromJsonShopifyCart(cart);
+      return CheckoutCart.fromJsonShopify(checkout);
     } catch (e) {
       printLog('::::removeCoupon shopify error');
       printLog(e.toString());

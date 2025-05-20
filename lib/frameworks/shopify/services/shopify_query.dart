@@ -300,6 +300,7 @@ mutation cartBuyerIdentityUpdate(\$cartId: ID!, \$buyerIdentity: CartBuyerIdenti
         email
         phone
         deliveryAddressPreferences {
+          __typename
           ... on MailingAddress {
             address1
             address2
@@ -321,7 +322,6 @@ mutation cartBuyerIdentityUpdate(\$cartId: ID!, \$buyerIdentity: CartBuyerIdenti
     }
   }
 }
-
 ''';
 
   static String updateShippingLine = '''
@@ -422,52 +422,79 @@ mutation cartBuyerIdentityUpdate(\$cartId: ID!, \$buyerIdentity: CartBuyerIdenti
   ''';
 
   static String applyCoupon = '''
-   mutation cartDiscountCodesUpdate(\$cartId: ID!, \$discountCodes: [String!]) {
-  cartDiscountCodesUpdate(cartId: \$cartId, discountCodes: \$discountCodes) {
-    cart {
-      discountCodes {
-        code
-        applicable
+    mutation checkoutDiscountCodeApplyV2(\$discountCode: String!, \$checkoutId: ID!) {
+      checkoutDiscountCodeApplyV2(discountCode: \$discountCode, checkoutId: \$checkoutId) {
+          checkoutUserErrors {
+            field
+            message
+          }
+          checkout {
+            id
+            webUrl
+            discountApplications(first: 10) {
+              edges {
+                node {
+                  __typename
+                  ... on DiscountCodeApplication {
+                    allocationMethod
+                    applicable
+                    code
+                    targetSelection
+                    targetType
+                    value {
+                      __typename
+                      ... on MoneyV2 {
+                        amount
+                      }
+                      ... on PricingPercentageValue {
+                        percentage
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            totalTaxV2 {
+              amount
+            }
+            totalPriceV2 {
+              amount
+            }
+            subtotalPriceV2 {
+              amount
+            }
+            paymentDueV2 {
+              amount
+            }
+          }
       }
-      discountAllocations {
-        discountedAmount {
-          amount
+    }
+    ''';
+
+  static String removeCoupon = '''
+    mutation checkoutDiscountCodeRemove(\$checkoutId: ID!) {
+      checkoutDiscountCodeRemove(checkoutId: \$checkoutId) {
+        checkoutUserErrors {
+          code
+          field
+          message
         }
-      }
-      cost {
-        subtotalAmount {
-          amount
+        checkout {
+          id
+          webUrl
+          totalPriceV2 {
+            amount
+          }
+          subtotalPriceV2 {
+            amount
+          }
+          paymentDueV2 {
+            amount
+          }
         }
       }
     }
-  }
-}
     ''';
-
-  // static String removeCoupon = '''
-  //   mutation checkoutDiscountCodeRemove(\$checkoutId: ID!) {
-  //     checkoutDiscountCodeRemove(checkoutId: \$checkoutId) {
-  //       checkoutUserErrors {
-  //         code
-  //         field
-  //         message
-  //       }
-  //       checkout {
-  //         id
-  //         webUrl
-  //         totalPriceV2 {
-  //           amount
-  //         }
-  //         subtotalPriceV2 {
-  //           amount
-  //         }
-  //         paymentDueV2 {
-  //           amount
-  //         }
-  //       }
-  //     }
-  //   }
-  //   ''';
 
   static const String cartBuyerIdentityUpdate = '''
   mutation cartBuyerIdentityUpdate(\$buyerIdentity: CartBuyerIdentityInput!, \$cartId: ID!) {

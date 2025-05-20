@@ -361,9 +361,9 @@ extension on _ShippingAddressState {
                   Provider.of<CartModel>(context, listen: false)
                       .setAddress(address);
                   saveDataToLocal();
-                  // Future.delayed(
-                  //   const Duration(seconds: 5),
-                  // );
+                  Future.delayed(
+                    const Duration(seconds: 5),
+                  );
                 }
               },
               icon: const Icon(

@@ -74,7 +74,7 @@ class ShopifyWidget extends BaseFrameworks
       cartModel.setCheckout(checkout);
 
       if (checkout != null) {
-        // / apply coupon code
+        /// apply coupon code
         var checkoutCoupon =
             await shopifyService.applyCoupon(cartModel, code!.toUpperCase());
 
@@ -101,18 +101,18 @@ class ShopifyWidget extends BaseFrameworks
     }
   }
 
-  // @override
-  // Future<void> removeCoupon(context) async {
-  //   final cartModel = Provider.of<CartModel>(context, listen: false);
-  //   try {
-  //     final checkout =
-  //         await shopifyService.removeCoupon(cartModel.checkout!.id);
+  @override
+  Future<void> removeCoupon(context) async {
+    final cartModel = Provider.of<CartModel>(context, listen: false);
+    try {
+      final checkout =
+          await shopifyService.removeCoupon(cartModel.checkout!.id);
 
-  //     cartModel.setCheckout(checkout);
-  //   } catch (e) {
-  //     printLog(e);
-  //   }
-  // }
+      cartModel.setCheckout(checkout);
+    } catch (e) {
+      printLog(e);
+    }
+  }
 
   @override
   Future<void> doCheckout(context,
